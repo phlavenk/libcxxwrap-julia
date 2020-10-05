@@ -15,6 +15,8 @@ endif()
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 find_package(Julia REQUIRED)
+execute_process( julia -e 'using Pkg; Pkg.add(“CxxWrap”)')
+
 
 set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib;${Julia_LIBRARY_DIR}")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
